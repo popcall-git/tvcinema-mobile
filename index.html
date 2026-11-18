@@ -1037,7 +1037,7 @@ function mountVod(){
   const shelves=vodShelves(kind),position=vodPositions[page]||(vodPositions[page]={top:0,rows:{},hero:page==='movieAlt'?1:0});
   const heroes=(kind==='kids'?['spacepals','cloudcastle','oceanfriends']:kind==='series'?['hawk','friends','north']:['hail','neon','ride']).map(id=>VOD_BY_ID[id]);
   const pane=document.createElement('section');pane.className='vod-pane';pane.id='vodPane';pane.tabIndex=0;pane.setAttribute('aria-label',`${kind.toUpperCase()} 点播内容`);
-  pane.innerHTML=`<section class="vod-hero" aria-label="推荐影片轮播"><div class="vod-hero-strip" id="vodHeroStrip" data-vod-horizontal tabindex="0">${heroes.map(item=>`<button class="vod-hero-slide" data-vod-item="${item.id}" aria-label="查看推荐 ${escapeHtml(item.title)}">${vodBrowseHero(item)}<span class="vod-hero-shade"></span><span class="vod-hero-title">${escapeHtml(item.title)}</span></button>`).join('')}</div><div class="vod-hero-dots">${heroes.map((item,index)=>`<button class="vod-hero-dot" data-vod-slide="${index}" aria-label="推荐第 ${index+1} 张" aria-pressed="${index===position.hero}"></button>`).join('')}</div></section>${shelves.map((shelf,index)=>`<section class="vod-shelf"><header class="vod-shelf-heading"><h2>${shelf.title}</h2><div class="vod-shelf-tools"><button class="vod-see-all" data-vod-collection="${shelf.key}" aria-label="查看全部 ${shelf.title}">See all <span>${shelf.items.length}</span></button><div class="vod-row-controls"><button data-vod-scroll="${index}" data-direction="-1" aria-label="${shelf.title} 向左滑动">‹</button><button data-vod-scroll="${index}" data-direction="1" aria-label="${shelf.title} 向右滑动">›</button></div></div></header><div class="vod-row" id="vodRow${index}" data-vod-horizontal data-vod-row="${index}" tabindex="0" role="region" aria-label="${shelf.title} 海报列表">${shelf.items.slice(0,8).map(vodBrowseCard).join('')}</div></section>`).join('')}<p class="vod-footer-note">${kind==='kids'?'Little stories. Big adventures.':'More stories to discover.'}</p>`;
+  pane.innerHTML=`<section class="vod-hero" aria-label="推荐影片轮播"><div class="vod-hero-strip" id="vodHeroStrip" data-vod-horizontal tabindex="0">${heroes.map(item=>`<button class="vod-hero-slide" data-vod-item="${item.id}" aria-label="查看推荐 ${escapeHtml(item.title)}">${vodBrowseHero(item)}<span class="vod-hero-shade"></span><span class="vod-hero-title">${escapeHtml(item.title)}</span></button>`).join('')}</div><div class="vod-hero-dots">${heroes.map((item,index)=>`<button class="vod-hero-dot" data-vod-slide="${index}" aria-label="推荐第 ${index+1} 张" aria-pressed="${index===position.hero}"></button>`).join('')}</div></section>${shelves.map((shelf,index)=>`<section class="vod-shelf"><header class="vod-shelf-heading"><h2>${shelf.title}</h2>${kind==='movie'?'':`<div class="vod-shelf-tools"><button class="vod-see-all" data-vod-collection="${shelf.key}" aria-label="查看全部 ${shelf.title}">See all <span>${shelf.items.length}</span></button><div class="vod-row-controls"><button data-vod-scroll="${index}" data-direction="-1" aria-label="${shelf.title} 向左滑动">‹</button><button data-vod-scroll="${index}" data-direction="1" aria-label="${shelf.title} 向右滑动">›</button></div></div>`}</header><div class="vod-row" id="vodRow${index}" data-vod-horizontal data-vod-row="${index}" tabindex="0" role="region" aria-label="${shelf.title} 海报列表">${(kind==='movie'?shelf.items:shelf.items.slice(0,8)).map(vodBrowseCard).join('')}</div></section>`).join('')}<p class="vod-footer-note">${kind==='kids'?'Little stories. Big adventures.':'More stories to discover.'}</p>`;
   $('#screen').appendChild(pane);
   pane.scrollTop=position.top;
   pane.addEventListener('scroll',()=>{position.top=pane.scrollTop;},{passive:true});
@@ -1046,7 +1046,7 @@ function mountVod(){
   pane.querySelectorAll('[data-vod-row]').forEach(row=>{
     const index=row.dataset.vodRow;row.scrollLeft=position.rows[index]||0;
     const arrows=[...pane.querySelectorAll(`[data-vod-scroll="${index}"]`)];
-    const update=()=>{position.rows[index]=row.scrollLeft;arrows[0].disabled=row.scrollLeft<=1;arrows[1].disabled=row.scrollLeft>=row.scrollWidth-row.clientWidth-1;};
+    const update=()=>{position.rows[index]=row.scrollLeft;if(arrows.length){arrows[0].disabled=row.scrollLeft<=1;arrows[1].disabled=row.scrollLeft>=row.scrollWidth-row.clientWidth-1;}};
     row.addEventListener('scroll',update,{passive:true});update();
   });
   pane.addEventListener('keydown',event=>{
@@ -1060,7 +1060,7 @@ function mountVod(){
     const item=event.target.closest('[data-vod-item]');if(item)openVodDetail(item.dataset.vodItem);
   });
   enableVodGestures(pane);
-  $('#detailDesc').textContent='海报行可左右滑动，内容区域可上下滑动；支持触摸、触控板、鼠标拖动及行标题旁的方向按钮。点击海报查看内容。';
+  $('#detailDesc').textContent=kind==='movie'?'海报列表仅保留左右滑动，不显示 See all、数量或左右箭头；内容区域可上下滑动，点击海报播放。':'海报行可左右滑动，内容区域可上下滑动；支持触摸、触控板、鼠标拖动及行标题旁的方向按钮。点击海报查看内容。';
   $('#stateNote').textContent=`${VOD_ITEMS.filter(item=>kind==='featured'||item.kind===kind).length} 个示例标题；栏目按热度、演示上架时间或题材区分。年份、地区、分级和热度为本地演示字段。`;
   $('#caption').textContent='上下浏览内容 · 左右滑动海报 · 点击查看影片';
 }
