@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "TVCinema 全局 UI 与交互规范",
-    "version": "1.4",
+    "version": "1.5",
     "date": "2026-11-18",
     "basis": "当前原型实现快照；不包含被撤销的双入口与强化 Replay 方案",
     "canvas": {
@@ -142,7 +142,7 @@
   "sourceSha256": {
     "prototype.template.html": "728bd810eb7f77de8885676d3dd128ace7509b67cc86ab431dcef6500caa0ab9",
     "global-ui.css": "24133893f2e3f4b2b0d4c70516c2d789905dd8c0daef136c8666b508f976340d",
-    "global-ui.js": "eb9999d0dd14ab93c91f5fdca892c476f9a18ac52e9e5a61cae6ef2aa33e31b0",
+    "global-ui.js": "56a8465b9848c3916c7f1a584e5e2385d1a067348c6e9f612e643505c27d1c67",
     "canvas.css": "b98b9a84977c97db3b0b6d6edff8068af28360ce5196cf465616839996c3d847",
     "canvas.js": "ff8a6211b77465a2471c2bdf64255bb171e1d69036d5b518eabc85bea3ba95eb",
     "tv.css": "0570a95264554391882a6739c1fe9dc782f228894ded5dd32727cd68e5f04cf2",

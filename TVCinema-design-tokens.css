@@ -1,4 +1,4 @@
-/* TVCinema v1.4 · 2026-11-18 · extracted handoff tokens, NOT imported into the prototype.
+/* TVCinema v1.5 · 2026-11-18 · extracted handoff tokens, NOT imported into the prototype.
  * Lengths preserve source cqw values. Use on descendants of a container-type:inline-size
  * canvas. 1cqw = canvas width / 100; at 390 logical px, 1cqw = 3.9 px.
  * Native clients: use logicalPx values in the companion JSON as baseline points/dp;
