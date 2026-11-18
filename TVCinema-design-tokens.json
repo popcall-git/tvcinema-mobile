@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "TVCinema 全局 UI 与交互规范",
-    "version": "1.3",
+    "version": "1.4",
     "date": "2026-11-18",
     "basis": "当前原型实现快照；不包含被撤销的双入口与强化 Replay 方案",
     "canvas": {
@@ -142,7 +142,7 @@
   "sourceSha256": {
     "prototype.template.html": "728bd810eb7f77de8885676d3dd128ace7509b67cc86ab431dcef6500caa0ab9",
     "global-ui.css": "24133893f2e3f4b2b0d4c70516c2d789905dd8c0daef136c8666b508f976340d",
-    "global-ui.js": "961a5578a249b337df060e61de533b75676835dd330a153f26c4df33c5b6ddac",
+    "global-ui.js": "eb9999d0dd14ab93c91f5fdca892c476f9a18ac52e9e5a61cae6ef2aa33e31b0",
     "canvas.css": "b98b9a84977c97db3b0b6d6edff8068af28360ce5196cf465616839996c3d847",
     "canvas.js": "ff8a6211b77465a2471c2bdf64255bb171e1d69036d5b518eabc85bea3ba95eb",
     "tv.css": "0570a95264554391882a6739c1fe9dc782f228894ded5dd32727cd68e5f04cf2",
@@ -150,8 +150,8 @@
     "tv-guide.css": "924ce35a9ae8ddbdd99eb1247af8c5b5732bf164b1ca6defcd89ced60670cdb0",
     "epg.css": "9b97e3c59a7323806d5b52377b2152098ab06b57fdbbd151396bdccd3304528a",
     "epg.js": "32018f266564acc8b3c43650f899c3aec7ae7f22bf14fa97a2c7d312080baed2",
-    "vod.css": "008fb1172434aff3f57fbd6437f586f5488f4b725c98ef81f1dbb3d0aaf79312",
-    "vod.js": "88ce5bccfa808a0851645ffc88ee94dea415509248e0a90a39628a02d0ed2a2a",
+    "vod.css": "d01afef1f4b417cd2232b77e0e1d02ad6723d4262a2932be778e8b090375fecf",
+    "vod.js": "c0aa1ea63814ac435d55d027b1ebe4f0abccc25ff58c5f765950d7e9f847fc3f",
     "vod-browse.css": "dee8d90952b30446ce880100bdfae35736288e10ff280bffc265852e7fa447e8",
     "vod-browse.js": "b74d1b841bdafbfe5372be5621fd1e148be1540d99231595b64e76c1ebe49875",
     "movie-player.css": "46aa37668b51a6f3d6ed9e5b3df28babb12a5f53a313fa96affc665ded2e2a98",
