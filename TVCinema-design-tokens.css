@@ -1,4 +1,4 @@
-/* TVCinema v1.5 · 2026-11-18 · extracted handoff tokens, NOT imported into the prototype.
+/* TVCinema v1.18 · 2026-11-19 · extracted handoff tokens, NOT imported into the prototype.
  * Lengths preserve source cqw values. Use on descendants of a container-type:inline-size
  * canvas. 1cqw = canvas width / 100; at 390 logical px, 1cqw = 3.9 px.
  * Native clients: use logicalPx values in the companion JSON as baseline points/dp;
@@ -20,7 +20,7 @@
   --tvc-color-filter: #FFB600; /* 原图 Filter 选中态 */
   --tvc-color-match: #D49A32; /* MATCH 选中态 */
   --tvc-color-reservation: #FFD58E; /* 普通 EPG 已预约文字 */
-  --tvc-color-replay: #D0A4A5; /* Replay 标识文字 */
+  --tvc-color-replay: #D0A4A5; /* Playback 标识文字 */
   --tvc-font-heading: 5.13cqw; /* 通用标题变量; 20.007 logical px at 390 */
   --tvc-font-body: 3.59cqw; /* 通用正文变量; 14.001 logical px at 390 */
   --tvc-font-caption: 3.08cqw; /* 通用说明变量; 12.012 logical px at 390 */
@@ -30,9 +30,9 @@
   --tvc-icon: 5.13cqw; /* 公共图标; 20.007 logical px at 390 */
   --tvc-font-channel: 3.08cqw; /* 频道名称; 12.012 logical px at 390 */
   --tvc-font-programme: 2.82cqw; /* 频道节目名称; 10.998 logical px at 390 */
-  --tvc-font-replay: 2.05cqw; /* 现状 Replay 标识; 7.995 logical px at 390 */
+  --tvc-font-replay: 2.05cqw; /* 现状 Playback 标识; 7.995 logical px at 390 */
   --tvc-channel-epg-min-height: 19cqw; /* 有 EPG 频道行最小高度; 74.100 logical px at 390 */
-  --tvc-epg-button-width: 14cqw; /* 频道行 EPG 按钮宽度; 54.600 logical px at 390 */
+  --tvc-epg-button-width: 11.28cqw; /* 频道行 EPG 按钮宽度; 43.992 logical px at 390 */
   --tvc-epg-subscribe-width: 24cqw; /* 普通 EPG 预约按钮宽度; 93.600 logical px at 390 */
 }
 /* Example structure only: .tvcinema-canvas { container-type: inline-size; }

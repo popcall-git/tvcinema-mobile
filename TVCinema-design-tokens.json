@@ -1,9 +1,9 @@
 {
   "metadata": {
     "title": "TVCinema 全局 UI 与交互规范",
-    "version": "1.5",
-    "date": "2026-11-18",
-    "basis": "当前原型实现快照；不包含被撤销的双入口与强化 Replay 方案",
+    "version": "1.18",
+    "date": "2026-11-19",
+    "basis": "当前原型实现快照；不包含被撤销的双入口与强化 Playback 方案",
     "canvas": {
       "width": 390,
       "height": 844
@@ -69,7 +69,7 @@
     },
     "replay": {
       "value": "#D0A4A5",
-      "usage": "Replay 标识文字"
+      "usage": "Playback 标识文字"
     }
   },
   "sizes": {
@@ -121,7 +121,7 @@
     "font-replay": {
       "cqw": 2.05,
       "logicalPx": 7.995,
-      "usage": "现状 Replay 标识"
+      "usage": "现状 Playback 标识"
     },
     "channel-epg-min-height": {
       "cqw": 19,
@@ -129,8 +129,8 @@
       "usage": "有 EPG 频道行最小高度"
     },
     "epg-button-width": {
-      "cqw": 14,
-      "logicalPx": 54.6,
+      "cqw": 11.28,
+      "logicalPx": 43.992,
       "usage": "频道行 EPG 按钮宽度"
     },
     "epg-subscribe-width": {
@@ -140,26 +140,26 @@
     }
   },
   "sourceSha256": {
-    "prototype.template.html": "728bd810eb7f77de8885676d3dd128ace7509b67cc86ab431dcef6500caa0ab9",
-    "global-ui.css": "24133893f2e3f4b2b0d4c70516c2d789905dd8c0daef136c8666b508f976340d",
-    "global-ui.js": "56a8465b9848c3916c7f1a584e5e2385d1a067348c6e9f612e643505c27d1c67",
-    "canvas.css": "b98b9a84977c97db3b0b6d6edff8068af28360ce5196cf465616839996c3d847",
+    "prototype.template.html": "d5810fc0afbba8f778df2c96ff3ae187a2b99a00a9b3414b567140588b2dad83",
+    "global-ui.css": "e2ae763e7f514d28955b4e04455085db1469f35738124153b9204ce86b910023",
+    "global-ui.js": "b0ca07738be0be57b7b5d04537d8e56a9c5df2fd4b43e233992dd72fd193cd2f",
+    "canvas.css": "347632ac9ee52593ddf604862f2d2da134e0362e227c64f4b9e5d0aabef4e9c4",
     "canvas.js": "ff8a6211b77465a2471c2bdf64255bb171e1d69036d5b518eabc85bea3ba95eb",
     "tv.css": "0570a95264554391882a6739c1fe9dc782f228894ded5dd32727cd68e5f04cf2",
-    "tv.js": "1c92d878a2e3c802a2483b9128123cf73881991b831d846557b9e074db16bd94",
-    "tv-guide.css": "924ce35a9ae8ddbdd99eb1247af8c5b5732bf164b1ca6defcd89ced60670cdb0",
+    "tv.js": "7a8ab0f5a7cc373dbd2ffc53b44c3eaf413cc5a23d24c01ddbcaab4c6b7ce511",
+    "tv-guide.css": "ada10a52f0e0ee4415242fd8db0322092d09ca8a29fae27b506008ea86907b1a",
     "epg.css": "9b97e3c59a7323806d5b52377b2152098ab06b57fdbbd151396bdccd3304528a",
-    "epg.js": "32018f266564acc8b3c43650f899c3aec7ae7f22bf14fa97a2c7d312080baed2",
-    "vod.css": "d01afef1f4b417cd2232b77e0e1d02ad6723d4262a2932be778e8b090375fecf",
-    "vod.js": "c0aa1ea63814ac435d55d027b1ebe4f0abccc25ff58c5f765950d7e9f847fc3f",
-    "vod-browse.css": "dee8d90952b30446ce880100bdfae35736288e10ff280bffc265852e7fa447e8",
-    "vod-browse.js": "b74d1b841bdafbfe5372be5621fd1e148be1540d99231595b64e76c1ebe49875",
+    "epg.js": "e36ff8c73c76ec7e72db3e53db32e3fb9e8b742b6391ab6875f1f25576ca94be",
+    "vod.css": "11308805de8c37a1cb2dbceedaa60a7af65bfbf24b270af5ae1cbf84b242655e",
+    "vod.js": "8aeda55311ee18c724609bc774a0cf9206890876282492cc496df9e6dc2a27ba",
+    "vod-browse.css": "c801e56e33e3102b394c4504140021146324728582e94143dd08ee5c9e8e5ffd",
+    "vod-browse.js": "ea3dd6aceb7983b3c3f6b0f8b4303e3455e7a051358e6b06219accc68fb19ea0",
     "movie-player.css": "46aa37668b51a6f3d6ed9e5b3df28babb12a5f53a313fa96affc665ded2e2a98",
-    "movie-player.js": "dbf4599dc56fc3a97e7b853b890d5523f454d8b94d790006cf493340c72aa44d",
-    "match.css": "0d71acde775a723972e86fb0e242947fc0da6853e1abc59b97a1f441aae8e0dc",
-    "match.js": "1cd072566e71bb562b40a3d4724862f3a1f4c711fa3937efc7216e0e864df96c",
-    "profile.css": "0d97befb83e5a4f4aa4df31feac46a33a2c170dcb43e7c7b98120fc0eb926fe1",
-    "profile.js": "17167b621644a8c9425b1dd71120647e4746ecb1321c2edbb7c6ac0d875d07df",
+    "movie-player.js": "4f6342b4abcde0b59ac149c3cc49efc2747f3c71d1e194d9716c39d44a3729de",
+    "match.css": "f7c9b17437ce16de3a0ea0963e06ed0b18ec8e94abc50e669c0d74009c01249f",
+    "match.js": "7d39aaff1fcd3496fc15124b581ad14f3fef0e307cd96d0234733522bd983588",
+    "profile.css": "36052784a1b76f343e7aef6dea2c8f264af405f8922fe00a0aa5ee9115c9a8a1",
+    "profile.js": "e7016b7d2bb011bb52d42682c84a83f81eb9aa02f4508e56625e6d16a352a5f5",
     "search.css": "30477387f4934543283a2510083642c31e938504523c6423c8a5c88d51d21b77",
     "search.js": "33461ec11c0001237344d033416cf018f45e882086b9bb4214c1c4163bff90a5",
     "build.py": "7415624a481e134c8c155c1ed70d4b646836ee05ef0cb14c37377527e1ba5f6b"

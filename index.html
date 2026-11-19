@@ -118,7 +118,21 @@
 .match-modal-score > strong { font-size:27px; white-space:nowrap; }
 .show-hits .match-pill,.show-hits .match-open,.show-hits .match-reminder { outline:1px dashed #ff828980; outline-offset:-1px; }
 
-.match-reference-background{position:absolute;inset:12.25% 0 9.5%;z-index:2;overflow:hidden;pointer-events:none;background:#3c0806}.match-reference-band{position:absolute;left:0;right:0;background-repeat:no-repeat}.match-reference-edge{position:absolute;top:0;bottom:0;width:4%;overflow:hidden}.match-reference-edge.left{left:0}.match-reference-edge.right{right:0}.screen .match-reference-edge img{position:absolute;top:-25.1806cqw;width:100cqw;height:auto;max-width:none}.match-reference-edge.left img{left:0}.match-reference-edge.right img{left:-96cqw}#screen[data-page="match"] .app-statusbar{background:#3b0605}
+.match-reference-background{position:absolute;inset:12.25% 0 9.5%;z-index:2;overflow:hidden;pointer-events:none;background:#3c0806}.match-reference-band{position:absolute;left:0;right:0;background-repeat:no-repeat}#screen[data-page="match"] .app-statusbar{background:#3b0605}
+
+/* Broadcast information sits below the teams without replacing the stadium artwork. */
+.match-broadcast{display:flex;align-items:flex-start;gap:2.5cqw;padding:2.2cqw 3cqw;border-top:1px solid #68565066;background:#160d1338;color:#d0c4c3;font-size:2.82cqw;line-height:1.5;text-align:left}
+.match-broadcast-label{display:inline-flex;align-items:center;gap:1.2cqw;flex-shrink:0;color:#c7b6b6}
+.match-broadcast-label .ui-icon{width:3.59cqw;height:3.59cqw;flex-shrink:0;margin-top:.2cqw}
+.match-broadcast-list{display:flex;flex-wrap:wrap;gap:.7cqw 2.5cqw;min-width:0;color:#f5eeeb;font-weight:600}
+.match-broadcast-list>span{overflow-wrap:anywhere}
+.match-fixture .match-reminder{top:14cqw}
+.match-detail-channels{margin:4cqw 0;border:1px solid #68565066;border-radius:2cqw}
+
+/* Clip old screenshot UI to the header; keep the native list clear of app navigation. */
+.match-pane{bottom:calc(9.5% + 2cqw)}
+.match-toolbar,.match-filter-row{min-width:0;max-width:100%}
+#screen[data-page="match"] .app-tabbar{background:#20212b;backdrop-filter:none}
 
 .recharge-form { position:absolute; inset:0; z-index:3; pointer-events:none; }
 .recharge-input { position:absolute; left:7.75%; top:22.29%; width:84.5%; height:5.65%; padding:1cqw 3cqw; background:#2c2c2e; color:white; border:.26cqw solid #b34a4e; border-radius:1cqw; font-size:4.4cqw; text-align:center; pointer-events:auto; outline-offset:2px; }
@@ -137,6 +151,21 @@
 .history-capture-mask { position:absolute; left:0; right:0; top:80%; bottom:1.5%; z-index:1; background:#1a1a23; }
 .profile-empty-mask { position:absolute; left:0; right:0; top:15.2%; bottom:1.5%; background:#1a1a23; z-index:3; }
 .show-hits .recharge-input,.show-hits .recharge-confirm,.show-hits .language-option { outline:1px dashed #ff8289; outline-offset:-2px; }
+
+/* Screenshot reference: centered Parental Lock dialog and verbatim English copy. */
+#device>.veil[data-presentation="parental"]{align-items:center;padding:8cqw;background:#0009;backdrop-filter:none}
+#device .veil[data-presentation="parental"] .modal{width:100%;max-height:90%;padding:5cqw 3cqw 4.1cqw;border:0;border-radius:3cqw;background:#2b2b2b;box-shadow:none}
+#device .veil[data-presentation="parental"] .modal::before{display:none}
+#device .veil[data-presentation="parental"] .modal-head{justify-content:center;margin:0 0 5cqw}
+#device .veil[data-presentation="parental"] h2{font-size:4.62cqw;font-weight:500;line-height:1.4;text-align:center;color:#fff}
+#device .veil[data-presentation="parental"] #closeModal[hidden]{display:none!important}
+.parental-lock-form>p{margin:0 0 5cqw;color:#c2c2c2;font-size:3.59cqw;line-height:1.35}
+.parental-lock-form input{display:block;width:84%;height:10cqw;margin:0 auto;padding:1cqw 3cqw;border:1px solid #e34449;border-radius:1cqw;background:#454545;color:#fff;font-size:5.13cqw;letter-spacing:2cqw;text-align:center;outline-offset:1cqw}
+.parental-lock-form .parental-lock-error{margin:2cqw 8% 0;color:#ff9ca5;font-size:3.08cqw;line-height:1.4}
+.parental-lock-actions{display:flex;gap:3.4cqw;margin:5cqw 8% 0}
+.parental-lock-actions button{flex:1;min-width:0;min-height:11.28cqw;padding:1cqw 2cqw;border:0;border-radius:100cqw;background:#dedede;color:#252525;font-size:3.59cqw;font-weight:500;line-height:1.4}
+
+.parental-lock-form input:focus{outline:1px solid #e34449;outline-offset:0}
 
 .vod-pane { position:absolute; inset:19.1% 0 9.5%; z-index:3; overflow-x:hidden; overflow-y:auto; background:#1a1a23; line-height:1.4; overscroll-behavior-y:contain; touch-action:pan-x pan-y; scrollbar-width:thin; scrollbar-color:#56545e transparent; user-select:none; }
 .vod-hero { position:relative; margin:0 0 2.5cqw; }
@@ -181,9 +210,7 @@
 .show-hits .vod-card,.show-hits .vod-hero-slide,.show-hits .vod-row-controls button { outline:1px dashed #ff828980; outline-offset:-1px; }
 @media(max-width:400px) { .vod-modal-layout { grid-template-columns:90px minmax(0,1fr); gap:14px; } }
 
-/* Kids retains screenshot 81's banner and empty content area. */
-.kids-reference-pane{overflow-y:auto}.kids-reference-banner{position:relative;display:block;width:100%;aspect-ratio:1080/607;overflow:hidden;padding:0;border:0;border-radius:4cqw;background:#1a1a23}
-.screen .kids-reference-banner img{position:absolute;left:0;top:0;width:100%;height:auto;max-width:none;transform:translateY(-19.0991%)}
+/* Shared original KIDS wordmark across VOD navigation. */
 .app-vod-tabs .kids-reference-wordmark{display:block;position:relative;margin:0 auto;width:15cqw;aspect-ratio:160/67;overflow:hidden}
 .screen .kids-reference-wordmark img{position:absolute;left:0;top:0;width:675%;height:auto;max-width:none;transform:translate(-64.8148%,-13.0631%)}
 
@@ -398,12 +425,13 @@
 
 .app-detail-topbar{background:var(--ui-bg)}
 
+.app-profile-account>.app-avatar{flex-shrink:0}.app-profile-account>div{min-width:0;flex:1}.app-profile-account h1{overflow-wrap:anywhere}
+
 /* Browse-only card styles intentionally exclude the accepted watch pages. */
 .vod-pane .vod-browse-card,.catalog-pane .vod-browse-card{display:flex;flex-direction:column;align-self:stretch;min-width:0;color:#f3f4f9}
 .vod-pane .vod-browse-poster,.catalog-pane .vod-browse-poster{display:block;position:relative;width:100%;aspect-ratio:2/3;overflow:hidden;border-radius:2cqw;background:#282832}
 .vod-browse-poster>.vod-art{width:100%;height:100%;aspect-ratio:2/3}.vod-browse-score{position:absolute;inset:auto 0 0;display:flex;gap:1cqw;align-items:center;padding:4cqw 2cqw 1.7cqw;background:linear-gradient(transparent,#060a14e6);font-size:2.82cqw;font-weight:650;color:white;line-height:1.2}.vod-browse-score b{color:#ffc46b;font-size:3.08cqw}
 .vod-pane .vod-browse-card .vod-card-title,.catalog-pane .vod-browse-card .vod-card-title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;white-space:normal;overflow:hidden;overflow-wrap:anywhere;text-overflow:ellipsis;min-height:2.8em;height:2.8em;line-height:1.4;font-size:3.08cqw;margin:1.7cqw .6cqw 0;color:#f3f4f9}
-.vod-browse-meta{display:block;font-size:2.56cqw;line-height:1.6;margin:.8cqw .6cqw 0;color:#b8bed0}
 .vod-pane .vod-shelf-heading{gap:2cqw;padding-left:3cqw;padding-right:3cqw}.vod-pane .vod-shelf-heading h2{flex:1;min-width:0;line-height:1.3;font-size:3.59cqw}.vod-shelf-tools{display:flex;align-items:center;gap:1cqw;flex-shrink:0}.vod-see-all{min-height:var(--ui-touch);padding:1.5cqw .5cqw;border:0;background:transparent;font-size:2.82cqw;color:#ff9299;white-space:nowrap}.vod-see-all span{font-size:2.3cqw;color:#bbc0d1;margin-left:1cqw}.vod-pane .vod-row-controls{gap:0}.vod-pane .vod-row{align-items:stretch;gap:2.6cqw;padding-left:3cqw;padding-right:3cqw;scroll-padding-inline:3cqw}.vod-pane .vod-card{flex-basis:28.4cqw;width:28.4cqw}
 .vod-pane .vod-hero-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.3;bottom:8.5cqw;font-size:4.1cqw;max-width:86%}.vod-browse-hero-art{position:absolute;inset:0;overflow:hidden;background:#11151f}.vod-browse-hero-art>.vod-art{position:absolute;width:50%;left:25%;top:-25%;aspect-ratio:2/3;transform:rotate(-10deg) scale(1.25);box-shadow:0 0 15cqw #0008}.vod-pane .vod-hero-shade{background:linear-gradient(transparent 35%,#000c 100%)}
 .catalog-pane{position:absolute;inset:5.8% 0 1.5%;z-index:5;display:flex;flex-direction:column;background:#1a1a23;color:#f3f4f9;overflow:hidden;line-height:1.4}
@@ -438,7 +466,7 @@
 .device{width:min(390px,calc((100dvh - 220px)*390/844))}
 .screen{width:100%;aspect-ratio:390/844;height:auto;overflow:hidden;background:#1a1a23}
 .screen>.source-reference-image{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;visibility:hidden;pointer-events:none}
-.screen[data-page="match"]>.source-reference-image{visibility:visible}
+.screen[data-page="match"]>.source-reference-image{visibility:visible;clip-path:inset(5.8% 0 87.75% 0)}
 .device.landscape{width:min(100%,760px);margin-top:40px}.device.landscape .screen{aspect-ratio:844/390}
 .fullscreen .device{width:min(390px,calc((100dvh - 185px)*390/844))}.fullscreen .device.landscape{width:min(900px,90vw)}
 @media(min-height:1000px){.device{width:min(390px,calc((100dvh - 220px)*390/844))}}
@@ -460,10 +488,10 @@
 .shell{height:calc(100dvh - 72px);min-height:0;overflow:hidden}.main{height:100%;min-height:0;overflow:auto}.sidebar,.inspector{height:100%;overflow-y:auto}
 @media(max-width:700px){.shell{height:auto;min-height:calc(100dvh - 66px);overflow:visible}.main{height:auto;min-height:calc(100dvh - 66px);overflow:visible}.sidebar{height:auto}}
 
+.canvas-recharge-form .recharge-input{margin-bottom:1.6cqw}.canvas-recharge-form .recharge-code-hint{margin:0 0 4cqw;color:#b9c0d3;font-size:3.08cqw;line-height:1.5}
+
 /* Explicit guide controls separate tuning a channel from opening its schedule. */
-.tv-guide-context{display:flex;align-items:center;justify-content:space-between;gap:2cqw;padding:1.8cqw 3cqw;min-height:14cqw;flex-shrink:0;background:#22242f;border-bottom:1px solid #393c4b;color:#eef0f8}
-.tv-guide-context>span{min-width:0}.tv-guide-context strong{display:block;font-size:3.33cqw;font-weight:600}.tv-guide-context small{display:block;font-size:2.56cqw;color:#b7bed1;margin-top:.4cqw}.tv-guide-context button{display:flex;align-items:center;justify-content:center;gap:1.4cqw;flex-shrink:0;min-height:var(--ui-touch);padding:2cqw 3cqw;border:1px solid #a84b5b;border-radius:2.5cqw;background:#ed3d4318;color:#ffabb2;font-size:3.08cqw}.tv-guide-context button:disabled{color:#a2aabd;border-color:#464b60;background:transparent}.tv-guide-context svg{width:4.6cqw;height:4.6cqw}
-.tv-channel-wrap.has-epg .tv-channel{padding-right:16.5cqw;min-height:19cqw}.tv-channel-wrap.has-epg .tv-logo{width:12cqw}.tv-guide-action{position:absolute;right:.8cqw;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;gap:.8cqw;width:14cqw;min-height:var(--ui-touch);padding:1cqw;border:1px solid #716275;border-radius:2cqw;background:#191b25;color:#f0d5dd;font-size:2.82cqw;line-height:1.3}.tv-guide-action svg{width:4.1cqw;height:4.1cqw;flex-shrink:0}.tv-guide-action:hover,.tv-guide-action:focus-visible{border-color:#ff9299;background:#ed3d4322}.tv-channel-wrap.has-catchup .tv-playing{display:flex}.tv-channel-wrap.has-catchup .tv-channel:not([aria-pressed="true"]) .tv-playing{display:none}
+.tv-channel-wrap.has-epg .tv-channel{padding-right:13cqw;min-height:19cqw}.tv-channel-wrap.has-epg .tv-logo{width:12cqw}.tv-guide-action{position:absolute;right:.8cqw;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;gap:.7cqw;width:var(--ui-touch);min-width:var(--ui-touch);height:var(--ui-touch);min-height:var(--ui-touch);padding:0;border:0;border-radius:0;background:transparent;color:#a9adbf;font-size:2.56cqw;line-height:1.3}.tv-guide-action svg{width:3.59cqw;height:3.59cqw;flex-shrink:0}.tv-channel[aria-pressed="true"]~.tv-guide-action,.tv-guide-action:hover,.tv-guide-action:focus-visible{color:#e5e7ef;background:transparent}.tv-channel-wrap.has-catchup .tv-playing{display:flex}.tv-channel-wrap.has-catchup .tv-channel:not([aria-pressed="true"]) .tv-playing{display:none}
 .screen .tv-logo img.tv-epg-reference-logo{width:651.111%!important;transform:translate(-35.0683%,var(--epg-logo-y))!important;max-width:none}
 .tv-channel-copy .tv-catchup-tag{font-size:2.05cqw}.tv-marquee-title{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.tv-name-track{display:block;width:100%}.tv-name-label{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.tv-name-copy{display:none}
 .tv-marquee-title.is-scrolling .tv-name-track{display:flex;align-items:center;gap:7cqw;width:max-content;max-width:none;animation:tv-name-marquee var(--tv-marquee-duration,10s) linear infinite;animation-delay:1.3s;will-change:transform}.tv-marquee-title.is-scrolling .tv-name-label{display:block;width:max-content;max-width:none;flex-shrink:0;overflow:visible;text-overflow:clip}.tv-marquee-title.is-scrolling .tv-name-copy{display:block}
@@ -471,7 +499,7 @@
 .epg-plain-guide .epg-program-row{min-height:20cqw}.epg-plain-guide .epg-program-main{padding:2.5cqw;align-items:center}.epg-plain-guide .epg-program-main:disabled{opacity:1;color:#a8adbf}.epg-plain-guide .epg-program-copy small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:2.82cqw;line-height:1.45;margin-top:1cqw}.epg-plain-guide .epg-program-copy strong{font-size:3.08cqw;line-height:1.5}.epg-plain-guide .epg-program-copy em{display:block;margin:0;font-size:2.3cqw;line-height:1.5}.epg-subscribe{width:22cqw;display:flex;align-items:center;justify-content:center;gap:.7cqw;font-size:2.5cqw;padding:2cqw 1cqw;border-left:1px solid #414452;color:#e6c7d0}.epg-subscribe svg{width:4.1cqw;height:4.1cqw;flex-shrink:0}.epg-subscribe[aria-pressed="true"]{color:#ffd58e;background:#dba3351c}.epg-plain-guide .epg-program-row[data-state="live"]{border-left-width:1cqw;background:#36212c}.epg-plain-guide .epg-program-row[data-state="past"]{background:#232530}.epg-plain-guide .epg-program-row[data-state="past"] .epg-program-copy small{color:#a8adbf}
 @keyframes tv-name-marquee{0%,12%{transform:translateX(0)}90%,100%{transform:translateX(var(--tv-marquee-distance))}}
 @media(prefers-reduced-motion:reduce){.tv-marquee-title.is-scrolling .tv-name-track{animation:none;display:block;width:100%}.tv-marquee-title.is-scrolling .tv-name-label{white-space:normal;width:100%;overflow-wrap:anywhere}.tv-marquee-title.is-scrolling .tv-name-copy{display:none}.tv-marquee-title.is-scrolling{white-space:normal}}
-.show-hits .tv-guide-action,.show-hits .tv-guide-context button,.show-hits .epg-subscribe{outline:1px dashed #ff828980;outline-offset:-1px}
+.show-hits .tv-guide-action,.show-hits .epg-subscribe{outline:1px dashed #ff828980;outline-offset:-1px}
 
 .epg-subscribe{width:24cqw;font-size:2.82cqw;white-space:nowrap}
 
@@ -521,7 +549,7 @@ mountUnifiedCanvasPage();
 }
 function modal(title,html,presentation='sheet'){
  if($('#veil').classList.contains('open')&&$('#veil').dataset.presentation==='page'&&presentation==='sheet')modalStack.push({title:$('#modalTitle').textContent,nodes:[...$('#modalBody').childNodes],presentation:'page',scroll:$('.modal').scrollTop});
- lastFocus=document.activeElement;$('#modalTitle').textContent=title;$('#modalBody').innerHTML=html;$('#veil').dataset.presentation=presentation;$('#closeModal').innerHTML=uiIcon(presentation==='page'?'back':'close');$('#closeModal').setAttribute('aria-label',presentation==='page'?'返回内容来源':'关闭');$('#veil').classList.add('open');$('.modal').scrollTop=0;$('.modal').focus();
+ lastFocus=document.activeElement;$('#modalTitle').textContent=title;$('#modalBody').innerHTML=html;$('#veil').dataset.presentation=presentation;$('#closeModal').hidden=presentation==='parental';$('#closeModal').innerHTML=uiIcon(presentation==='page'?'back':'close');$('#closeModal').setAttribute('aria-label',presentation==='page'?'返回内容来源':'关闭');$('#veil').classList.add('open');$('.modal').scrollTop=0;$('.modal').focus();
 }
 function closeModal(all=false){
  if(all!==true&&modalStack.length){const previous=modalStack.pop();$('#modalTitle').textContent=previous.title;$('#modalBody').replaceChildren(...previous.nodes);$('#veil').dataset.presentation=previous.presentation;$('#closeModal').innerHTML=uiIcon('back');$('#closeModal').setAttribute('aria-label','返回内容来源');$('.modal').scrollTop=previous.scroll;$('.modal').focus();return;}
@@ -539,7 +567,7 @@ function renew(){go('renew');}
 function settings(){go('settings');}
 function init(){$('.brand .tag').textContent=`${PAGES.length} SCREENS`;$('.side-head span').textContent=`${PAGES.length} 个画板`;$('.gallery-head .tag').textContent=`SOURCE SCREENSHOTS / ${PAGES.length}`;let group='';PAGES.forEach((p,i)=>{if(p.group!==group){group=p.group;const g=document.createElement('div');g.className='group';g.textContent=group;$('#pageList').appendChild(g);}const b=document.createElement('button');b.className='page-link';b.dataset.go=p.id;b.innerHTML=`<span class="num">${String(i+1).padStart(2,'0')}</span>${p.title}`;b.onclick=()=>['moviePlayer','detail'].includes(p.id)?openReferenceWatchPage(p.id):['tvEpgChannels','tvEpgGuide'].includes(p.id)?openReferenceEpgPage(p.id):go(p.id);$('#pageList').appendChild(b);const card=document.createElement('button');card.className='card';card.setAttribute('aria-label',`打开${p.title}画板`);card.innerHTML=`<div class="thumb ${p.id==='player'?'land-thumb':''}"><img loading="lazy" src="${p.src}" alt="${p.title}"></div><strong>${String(i+1).padStart(2,'0')} · ${p.title}</strong><small>${p.group} / 截图 ${p.number}</small>`;card.querySelector('.thumb').style.aspectRatio=p.id==='player'?'844 / 390':'390 / 844';card.onclick=()=>['moviePlayer','detail'].includes(p.id)?openReferenceWatchPage(p.id):['tvEpgChannels','tvEpgGuide'].includes(p.id)?openReferenceEpgPage(p.id):go(p.id);$('#cards').appendChild(card);});
 document.querySelectorAll('.shortcuts [data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$('#overviewToggle').onclick=()=>showOverview(!isOverview);$('#hotspotsToggle').onclick=()=>{const v=document.body.classList.toggle('show-hits');$('#hotspotsToggle').classList.toggle('active',v);$('#hotspotsToggle').setAttribute('aria-pressed',v);};$('#focusToggle').onclick=()=>{const v=document.body.classList.toggle('fullscreen');$('#focusToggle').classList.toggle('active',v);$('#focusToggle').setAttribute('aria-pressed',v);};$('#pagesToggle').onclick=()=>document.body.classList.toggle('mobile-menu');$('#prevPage').onclick=()=>go(PAGES[Math.max(0,PAGES.findIndex(p=>p.id===current)-1)].id);$('#nextPage').onclick=()=>go(PAGES[Math.min(PAGES.length-1,PAGES.findIndex(p=>p.id===current)+1)].id);$('#closeModal').onclick=closeModal;$('#veil').onclick=e=>{if(e.target===$('#veil')&&$('#veil').dataset.presentation!=='page')closeModal();};$('#resetDemo').onclick=()=>{tvScroll={left:0,right:{}};matchScroll={};vodPositions={};epgScroll={dates:0,programs:{}};demo={favorite:true,adult:false,cleared:{},filters:{},reminders:[],episode:1,season:1};vodBrowse=readVodBrowse();pageViews={};tabRoutes={...NAV_ROOTS};tabTrails={vod:[],tv:[],match:[],profile:[]};trail=tabTrails[activeTab];save();$('#stateNote').textContent='演示状态已重置。页面跳转使用原始截图；补充弹窗为交互模拟。';render();toast('已重置演示状态');};
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();if(isOverview)showOverview(false);return;}if($('#veil').classList.contains('open')){if(e.key==='Tab'){const items=[...$('.modal').querySelectorAll('button,input,select,[tabindex="0"]')].filter(n=>!n.disabled);const first=items[0],last=items.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===$('.modal'))){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}return;}if(e.target.matches('input,select,textarea')||e.target.closest('#device'))return;if(e.key.toLowerCase()==='h')$('#hotspotsToggle').click();if(e.key==='ArrowLeft')$('#prevPage').click();if(e.key==='ArrowRight')$('#nextPage').click();});installNavigation();$('#device').appendChild($('#veil'));const hash=location.hash.slice(1);const id=pageById[hash]?hash:'featured';if(id==='tvEpgChannels'){tvState().category='docs';tvState().channel='dtheater';}if(['moviePlayer','detail'].includes(id)){const savedItem=history.state?.page===id?history.state.watchItem:null;demo[id==='moviePlayer'?'activeMovie':'activeSeries']=VOD_BY_ID[savedItem]?.kind===(id==='moviePlayer'?'movie':'series')?savedItem:id==='moviePlayer'?'mandalorian':'friends';}activeTab=({TV:'tv',MATCH:'match',PROFILE:'profile'})[pageById[id].group]||'vod';trail=tabTrails[activeTab];go(id,false,'replace');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();if(isOverview)showOverview(false);return;}if($('#veil').classList.contains('open')){if(e.key==='Tab'){const items=[...$('.modal').querySelectorAll('button,input,select,[tabindex="0"]')].filter(n=>!n.disabled&&n.getClientRects().length);const first=items[0],last=items.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===$('.modal'))){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}return;}if(e.target.matches('input,select,textarea')||e.target.closest('#device'))return;if(e.key.toLowerCase()==='h')$('#hotspotsToggle').click();if(e.key==='ArrowLeft')$('#prevPage').click();if(e.key==='ArrowRight')$('#nextPage').click();});installNavigation();$('#device').appendChild($('#veil'));const hash=location.hash.slice(1);const id=pageById[hash]?hash:'featured';if(id==='tvEpgChannels'){tvState().category='docs';tvState().channel='dtheater';}if(['moviePlayer','detail'].includes(id)){const savedItem=history.state?.page===id?history.state.watchItem:null;demo[id==='moviePlayer'?'activeMovie':'activeSeries']=VOD_BY_ID[savedItem]?.kind===(id==='moviePlayer'?'movie':'series')?savedItem:id==='moviePlayer'?'mandalorian':'friends';}activeTab=({TV:'tv',MATCH:'match',PROFILE:'profile'})[pageById[id].group]||'vod';trail=tabTrails[activeTab];go(id,false,'replace');}
 
 const TV_CATEGORIES = [
   ['all','ALL'], ['catchup','CATCH UP'], ['favorites','FAVORITES'], ['history','PLAY HISTORY'],
@@ -651,7 +679,7 @@ function tvStill(channel){
 }
 function tvPreviewMarkup(channel){
   const playback=epgPresentation(channel),replay=playback.mode==='replay';
-  return `${replay?epgReplayStill():tvStill(channel)}<span class="tv-shade"></span><span class="tv-trial">Free Trial</span><span class="tv-live-badge">${replay?'REPLAY':'LIVE'} · DEMO</span><span class="tv-now">${tvMarqueeTitle(channel.name)}<small>${escapeHtml(playback.title)} ${escapeHtml(playback.range)}</small></span><span class="tv-expand" aria-hidden="true">⛶</span>`;
+  return `${replay?epgReplayStill():tvStill(channel)}<span class="tv-shade"></span><span class="tv-trial">Free Trial</span><span class="tv-live-badge">${replay?'Playback':'LIVE'} · DEMO</span><span class="tv-now">${tvMarqueeTitle(channel.name)}<small>${escapeHtml(playback.title)} ${escapeHtml(playback.range)}</small></span><span class="tv-expand" aria-hidden="true">⛶</span>`;
 }
 function updateTvPreview(){
   const channel=TV_BY_ID[tvState().channel];
@@ -659,7 +687,7 @@ function updateTvPreview(){
   if(preview){preview.innerHTML=tvPreviewMarkup(channel);preview.setAttribute('aria-label',`全屏播放 ${epgPresentation(channel).mode==='replay'?'回放 ':''}${channel.name}`);}
   const announcement=$('#tvAnnouncement');
   if(announcement)announcement.textContent=`正在播放 ${channel.name}，${channel.program}`;
-  paintTvGuideShortcut(channel);syncTvNameMarquees();
+  syncTvNameMarquees();
   if(['tv','tvCatchup','tvEpgChannels'].includes(current))$('#caption').textContent=`正在播放 ${channel.name} · 两栏可独立上下滑动`;
 }
 function paintTvCategories(){
@@ -676,7 +704,7 @@ function paintTvChannels(resetScroll=false){
   list.setAttribute('aria-label',`${category.name} 频道列表`);
   list.innerHTML=channels.map(channel=>{
     const programme=epgPresentation(channel),name=channel.number+' '+channel.name;
-    return `<div class="tv-channel-wrap ${channel.epg?'has-epg':''} ${channel.catchup?'has-catchup':''}"><button class="tv-channel" data-tv-channel="${channel.id}" aria-label="播放 ${escapeHtml(channel.name)}" aria-pressed="${channel.id===state.channel}">${tvLogo(channel)}<span class="tv-channel-copy">${tvMarqueeTitle(name)}<small>${escapeHtml(programme.title)}${channel.catchup?'<span class="tv-catchup-tag">Replay</span>':''}</small></span><span class="tv-playing" aria-hidden="true"><i></i><i></i><i></i></span></button>${channel.epg?`<button class="tv-guide-action" data-tv-guide="${channel.id}" aria-label="查看 ${escapeHtml(channel.name)} EPG 节目单" title="TV Guide · ${escapeHtml(channel.name)}">${EPG_ICONS.calendar}<span>EPG</span></button>`:''}</div>`;
+    return `<div class="tv-channel-wrap ${channel.epg?'has-epg':''} ${channel.catchup?'has-catchup':''}"><button class="tv-channel" data-tv-channel="${channel.id}" aria-label="播放 ${escapeHtml(channel.name)}" aria-pressed="${channel.id===state.channel}">${tvLogo(channel)}<span class="tv-channel-copy">${tvMarqueeTitle(name)}<small>${escapeHtml(programme.title)}${channel.catchup?'<span class="tv-catchup-tag">Playback</span>':''}</small></span><span class="tv-playing" aria-hidden="true"><i></i><i></i><i></i></span></button>${channel.epg?`<button class="tv-guide-action" data-tv-guide="${channel.id}" aria-label="查看 ${escapeHtml(channel.name)} EPG 节目单" title="TV Guide · ${escapeHtml(channel.name)}">${EPG_ICONS.calendar}<span>EPG</span></button>`:''}</div>`;
   }).join('')||'<div class="tv-empty">暂无频道<small>收藏或播放频道后会出现在这里</small></div>';
   list.scrollTop=resetScroll?0:(tvScroll.right[state.category]||0);syncTvNameMarquees();
 }
@@ -720,7 +748,7 @@ function enableTvDrag(element){
 function mountTv(){
   const state=tvState(),pane=document.createElement('section');
   pane.className='tv-pane'+(current==='tvCatchup'?' tv-catchup-pane':'');pane.setAttribute('aria-label','电视直播浏览器');
-  pane.innerHTML=`<button class="tv-preview" id="tvPreview"></button><div class="tv-guide-context" id="tvGuideContext"></div><div class="tv-tabs"><button class="tv-tab-selected" aria-current="page" id="tvChannelTab">Channel</button><button id="tvSubscribedTab">Subscribed</button></div><div class="tv-columns"><nav class="tv-scroll tv-categories" id="tvCategories" aria-label="频道分类" tabindex="0">${TV_CATEGORIES.map(c=>`<button class="tv-category" data-tv-category="${c.id}" aria-label="分类 ${c.name}" aria-pressed="${c.id===state.category}"><span>${c.name}</span><small>${tvChannels(c.id).length}</small></button>`).join('')}</nav><section class="tv-scroll tv-channels" id="tvChannels" role="region" tabindex="0"></section></div><span id="tvAnnouncement" class="tv-announcement" role="status" aria-live="polite"></span>`;
+  pane.innerHTML=`<button class="tv-preview" id="tvPreview"></button><div class="tv-tabs"><button class="tv-tab-selected" aria-current="page" id="tvChannelTab">Channel</button><button id="tvSubscribedTab">Subscribed</button></div><div class="tv-columns"><nav class="tv-scroll tv-categories" id="tvCategories" aria-label="频道分类" tabindex="0">${TV_CATEGORIES.map(c=>`<button class="tv-category" data-tv-category="${c.id}" aria-label="分类 ${c.name}" aria-pressed="${c.id===state.category}"><span>${c.name}</span><small>${tvChannels(c.id).length}</small></button>`).join('')}</nav><section class="tv-scroll tv-channels" id="tvChannels" role="region" tabindex="0"></section></div><span id="tvAnnouncement" class="tv-announcement" role="status" aria-live="polite"></span>`;
   $('#screen').appendChild(pane);
   $('#tvCategories').scrollTop=tvScroll.left;
   if(current==='tvEpgChannels'&&tvScroll.left===0){const nav=$('#tvCategories'),selected=nav.querySelector('[aria-pressed="true"]');if(selected){nav.scrollTop=selected.offsetTop-nav.firstElementChild.offsetTop-nav.clientHeight/2+selected.offsetHeight/2;tvScroll.left=nav.scrollTop;}}
@@ -729,10 +757,9 @@ function mountTv(){
   $('#tvChannels').addEventListener('scroll',e=>{tvScroll.right[tvState().category]=e.currentTarget.scrollTop;},{passive:true});
   $('#tvCategories').onclick=e=>{const button=e.target.closest('[data-tv-category]');if(button)selectTvCategory(button.dataset.tvCategory);};
   $('#tvChannels').onclick=e=>{const guide=e.target.closest('[data-tv-guide]');if(guide){openTvGuide(guide.dataset.tvGuide);return;}const button=e.target.closest('[data-tv-channel]');if(button)selectTvChannel(button.dataset.tvChannel);};
-  pane.addEventListener('click',event=>{const guide=event.target.closest('[data-tv-current-guide]');if(guide)openTvGuide(guide.dataset.tvCurrentGuide);});
   $('#tvPreview').onclick=()=>go('player');$('#tvSubscribedTab').onclick=()=>go('subscribed');
   paintTvChannels();updateTvPreview();observeTvNameMarquees();
-  $('#detailDesc').textContent='左右两栏独立滑动。点频道播放，点日历 EPG 查看节目单；播放预览下方也可进入 TV Guide。正在播放的长频道名称会横向滚动。';
+  $('#detailDesc').textContent='左右两栏独立滑动。点频道播放，点日历 EPG 查看节目单。正在播放的长频道名称会横向滚动。';
   $('#stateNote').textContent='分类和频道为实际交互控件；频道数据与播放画面用于原型演示。';
 }
 function mountSubscribedPreview(){
@@ -743,7 +770,7 @@ function mountSubscribedPreview(){
 function mountTvPlayer(){
   const state=tvState(),channel=TV_BY_ID[state.channel],playback=epgPresentation(channel),player=document.createElement('section');
   player.className='tv-full-player';player.setAttribute('aria-label',`${channel.name} 播放器`);
-  player.innerHTML=`${playback.mode==='replay'?epgReplayStill():tvStill(channel)}<span class="tv-shade"></span><div class="tv-player-head"><button id="tvPlayerBack" aria-label="退出横屏播放">‹</button>${tvMarqueeTitle(channel.name)}<button id="tvPlayerFavorite" aria-label="收藏当前频道" aria-pressed="${state.favorites.includes(channel.id)}">♥</button></div><div class="tv-player-footer"><button id="tvPlayerMute" aria-label="切换静音" aria-pressed="${state.muted}">${state.muted?'♩ ×':'♩'}</button><small><span class="epg-player-mode">${playback.mode==='replay'?'REPLAY':'LIVE'}</span>${escapeHtml(playback.title)} ${escapeHtml(playback.range)}</small><button id="tvPlayerFit" aria-label="切换画面比例">⛶</button></div><span class="tv-live-badge">${playback.mode==='replay'?'REPLAY':'LIVE'} · DEMO</span>`;
+  player.innerHTML=`${playback.mode==='replay'?epgReplayStill():tvStill(channel)}<span class="tv-shade"></span><div class="tv-player-head"><button id="tvPlayerBack" aria-label="退出横屏播放">‹</button>${tvMarqueeTitle(channel.name)}<button id="tvPlayerFavorite" aria-label="收藏当前频道" aria-pressed="${state.favorites.includes(channel.id)}">♥</button></div><div class="tv-player-footer"><button id="tvPlayerMute" aria-label="切换静音" aria-pressed="${state.muted}">${state.muted?'♩ ×':'♩'}</button><small><span class="epg-player-mode">${playback.mode==='replay'?'Playback':'LIVE'}</span>${escapeHtml(playback.title)} ${escapeHtml(playback.range)}</small><button id="tvPlayerFit" aria-label="切换画面比例">⛶</button></div><span class="tv-live-badge">${playback.mode==='replay'?'Playback':'LIVE'} · DEMO</span>`;
   $('#screen').appendChild(player);$('#tvPlayerBack').onclick=back;
   $('#tvPlayerFavorite').onclick=()=>{const index=state.favorites.indexOf(channel.id);if(index<0)state.favorites.push(channel.id);else state.favorites.splice(index,1);demo.favorite=state.favorites.includes(channel.id);if(demo.favorite)demo.cleared.favoriteLive=false;save();$('#tvPlayerFavorite').setAttribute('aria-pressed',demo.favorite);toast(demo.favorite?'已收藏频道':'已取消收藏频道');};
   $('#tvPlayerMute').onclick=()=>{state.muted=!state.muted;save();$('#tvPlayerMute').textContent=state.muted?'♩ ×':'♩';$('#tvPlayerMute').setAttribute('aria-pressed',state.muted);};
@@ -766,7 +793,6 @@ function syncTvNameMarquees(){
 }
 let tvNameObserver;
 function observeTvNameMarquees(){tvNameObserver?.disconnect();const surface=$('#tvChannels')||$('.tv-full-player')||$('.epg-heading');if(!surface)return;const observer=new ResizeObserver(()=>{if(!surface.isConnected){observer.disconnect();return;}syncTvNameMarquees();});tvNameObserver=observer;observer.observe(surface);syncTvNameMarquees();}
-function paintTvGuideShortcut(channel){const context=$('#tvGuideContext');if(!context)return;context.innerHTML=`<span><strong>Programme guide</strong><small>${channel.epg?'Schedules & Subscribe':'No EPG available'}</small></span><button data-tv-current-guide="${channel.id}" ${channel.epg?'':'disabled'} aria-label="${channel.epg?'查看当前频道 EPG 节目单':'当前频道暂无 EPG'}">${EPG_ICONS.calendar}<span>${channel.epg?'TV Guide':'No EPG'}</span></button>`;}
 function openReferenceEpgPage(page){const state=tvState();state.category='docs';tvScroll.left=0;tvScroll.right.docs=0;selectTvChannel('dtheater');epgState().channel='dtheater';epgState().date=EPG_TODAY;save();if(current===page)render();else go(page);}
 
 const MATCH_LEAGUES = {all:'All',uefa:'UEFA Nations League',friendly:'International Friendly Games'};
@@ -833,11 +859,25 @@ const MATCH_SCHEDULE = {
   ['friendly','Argentina','Germany','19:00','scheduled'],['uefa','Denmark','Netherlands','21:00','scheduled']
  ]
 };
+// Demonstration broadcast assignments, not official rights or live EPG mappings.
+const MATCH_BROADCASTS={
+ '15/11':[['espn1'],['espn2'],['sportv1'],['bandsports'],['sportv2'],['espn1','espn2']],
+ '16/11':[['sportv1'],['espn1'],['bandsports'],['espn2'],['sportv2'],['espn1','sportv1']],
+ '17/11':[['espn1'],['espn2','sportv1'],['bandsports'],['sportv1'],['espn1'],['sportv2'],['espn2'],['bandsports','espn1']],
+ '18/11':[['espn2'],['espn1'],['sportv1'],['sportv2','espn1'],['bandsports'],['espn2'],['sportv1'],['espn1']],
+ '19/11':[['espn1','espn2'],['sportv1'],['sportv2'],['bandsports'],['espn2'],['espn1']],
+ '20/11':[['espn2'],['espn1'],['sportv1','sportv2'],['bandsports'],['espn1'],['espn2']],
+ '21/11':[['bandsports'],['espn2'],['sportv1'],['espn1'],['sportv2','espn1'],['espn2']]
+};
+function matchBroadcastMarkup(game,detail=false){
+ const channels=(game.channelIds||[]).map(id=>TV_BY_ID[id]).filter(Boolean),names=channels.map(channel=>channel.name);
+ return `<div class="match-broadcast${detail?' match-detail-channels':''}" role="group" aria-label="播放频道：${escapeHtml(names.join('、')||'待公布')}"><span class="match-broadcast-label">${uiIcon('tv')}<span>Channels</span></span><span class="match-broadcast-list">${names.length?names.map(name=>`<span>${escapeHtml(name)}</span>`).join(''):'<span>To be announced</span>'}</span></div>`;
+}
 const MATCH_ALARM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 8v5l3 2M3 5l3-3m12 0 3 3M6 20l-1 2m13-2 1 2"/></svg>';
 let matchScroll={};
 function matchState(){if(!demo.match)demo.match={date:'17/11',league:'all',sport:'all',reminders:[]};if(!MATCH_LEAGUES[demo.match.league])demo.match.league='all';return demo.match;}
 function matchKey(){const state=matchState();return `${state.date}:${state.league}`;}
-function dayFixtures(){const state=matchState();return (MATCH_SCHEDULE[state.date]||[]).map((game,index)=>({league:game[0],home:game[1],away:game[2],score:game[3],status:game[4],date:state.date,id:`${state.date}:${game[1]}:${game[2]}`})).filter(game=>state.league==='all'||game.league===state.league);}
+function dayFixtures(){const state=matchState();return (MATCH_SCHEDULE[state.date]||[]).map((game,index)=>({league:game[0],home:game[1],away:game[2],score:game[3],status:game[4],date:state.date,channelIds:MATCH_BROADCASTS[state.date]?.[index]||[],id:`${state.date}:${game[1]}:${game[2]}`})).filter(game=>state.league==='all'||game.league===state.league);}
 function matchReminderLabel(game){return `${game.home} vs ${game.away} · ${game.date} ${game.score}`;}
 function toggleMatchReminder(id,label){
   const state=matchState(),index=state.reminders.indexOf(id);if(index<0)state.reminders.push(id);else state.reminders.splice(index,1);save();
@@ -845,26 +885,26 @@ function toggleMatchReminder(id,label){
   toast(`${index<0?'已添加':'已取消'}比赛提醒：${label}（模拟）`);
 }
 function openMatch(game){
-  modal('比赛详情',`<span class="chip">${escapeHtml(MATCH_LEAGUES[game.league])}</span><span class="chip">${game.date}</span><div class="match-modal-score"><span><span class="flag">${matchFlag(game.home)}</span>${escapeHtml(game.home)}</span><strong>${game.score}</strong><span><span class="flag">${matchFlag(game.away)}</span>${escapeHtml(game.away)}</span></div><p class="note">${game.status==='ended'?'比赛已结束':'比赛尚未开始'} · 赛程与比分为原型示例。</p>${game.status==='scheduled'?`<button class="primary" id="matchModalReminder">${matchState().reminders.includes(game.id)?'取消比赛提醒':'提醒我观看'}</button>`:''}`,'page');
+  modal('比赛详情',`<span class="chip">${escapeHtml(MATCH_LEAGUES[game.league])}</span><span class="chip">${game.date}</span><div class="match-modal-score"><span><span class="flag">${matchFlag(game.home)}</span>${escapeHtml(game.home)}</span><strong>${game.score}</strong><span><span class="flag">${matchFlag(game.away)}</span>${escapeHtml(game.away)}</span></div>${matchBroadcastMarkup(game,true)}<p class="note">${game.status==='ended'?'比赛已结束':'比赛尚未开始'} · 赛程与比分为原型示例。</p>${game.status==='scheduled'?`<button class="primary" id="matchModalReminder">${matchState().reminders.includes(game.id)?'取消比赛提醒':'提醒我观看'}</button>`:''}`,'page');
   if($('#matchModalReminder'))$('#matchModalReminder').onclick=()=>{toggleMatchReminder(game.id,matchReminderLabel(game));$('#matchModalReminder').textContent=matchState().reminders.includes(game.id)?'取消比赛提醒':'提醒我观看';};
 }
 function paintMatchFixtures(reset=false){
   const state=matchState(),list=$('#matchFixtures'),games=dayFixtures();
   list.setAttribute('aria-label',`${state.date} 比赛列表`);
-  list.innerHTML=games.map(game=>`<article class="match-fixture"><button class="match-open" data-match-open="${game.id}" aria-label="查看 ${game.home} 对 ${game.away} ${state.date}"><span class="match-league">${escapeHtml(MATCH_LEAGUES[game.league])}</span><span class="match-team"><span class="match-flag" aria-hidden="true">${matchFlag(game.home)}</span><span class="match-team-name">${escapeHtml(game.home)}</span></span><span class="match-score"><strong>${game.score}</strong><small>${state.date}</small></span><span class="match-team"><span class="match-flag" aria-hidden="true">${matchFlag(game.away)}</span><span class="match-team-name">${escapeHtml(game.away)}</span></span></button>${game.status==='scheduled'?`<button class="match-reminder" data-match-reminder="${game.id}" aria-label="提醒 ${escapeHtml(matchReminderLabel(game))}" aria-pressed="${state.reminders.includes(game.id)}">${MATCH_ALARM}</button>`:''}</article>`).join('')||'<div class="match-empty">当天暂无该联赛比赛<small>请选择其他日期或联赛</small></div>';
+  list.innerHTML=games.map(game=>`<article class="match-fixture"><button class="match-open" data-match-open="${game.id}" aria-label="查看 ${game.home} 对 ${game.away} ${state.date}"><span class="match-league">${escapeHtml(MATCH_LEAGUES[game.league])}</span><span class="match-team"><span class="match-flag" aria-hidden="true">${matchFlag(game.home)}</span><span class="match-team-name">${escapeHtml(game.home)}</span></span><span class="match-score"><strong>${game.score}</strong><small>${state.date}</small></span><span class="match-team"><span class="match-flag" aria-hidden="true">${matchFlag(game.away)}</span><span class="match-team-name">${escapeHtml(game.away)}</span></span></button>${matchBroadcastMarkup(game)}${game.status==='scheduled'?`<button class="match-reminder" data-match-reminder="${game.id}" aria-label="提醒 ${escapeHtml(matchReminderLabel(game))}" aria-pressed="${state.reminders.includes(game.id)}">${MATCH_ALARM}</button>`:''}</article>`).join('')||'<div class="match-empty">当天暂无该联赛比赛<small>请选择其他日期或联赛</small></div>';
   list.scrollTop=reset?0:(matchScroll[matchKey()]||0);
   $('#matchAnnouncement').textContent=`${state.date}，${games.length} 场比赛`;
   $('#caption').textContent=`${state.date} · ${games.length} 场比赛 · 上下滑动查看赛程`;
   document.querySelectorAll('[data-match-date]').forEach(button=>button.setAttribute('aria-pressed',button.dataset.matchDate===state.date));
   document.querySelectorAll('[data-match-league]').forEach(button=>button.setAttribute('aria-pressed',button.dataset.matchLeague===state.league));
 }
-// Reuse clean stadium gutters from the original screenshot as CSS background slices.
+// Reuse clean full-width stadium gutters; do not expose the screenshot’s old text at the edges.
 // No replacement artwork or gradient: original logo/header and stadium colors remain.
 function mountMatchReferenceBackground(){
  const scene=document.createElement('div');scene.className='match-reference-background';scene.setAttribute('aria-hidden','true');
  const slices=[[0,24,670,18],[24,19,960,18],[43,18,1246,18],[61,18,1534,18],[79,21,1824,18]];
  slices.forEach(([top,height,y,cropHeight])=>{const band=document.createElement('span');band.className='match-reference-band';band.style.cssText=`top:${top}%;height:${height}%;background-image:url("${pageById.match.src}");background-size:100% ${2220/cropHeight*100}%;background-position:0 ${y/(2220-cropHeight)*100}%`;scene.appendChild(band);});
- ['left','right'].forEach(side=>{const edge=document.createElement('span');edge.className='match-reference-edge '+side;const image=new Image();image.src=pageById.match.src;edge.appendChild(image);scene.appendChild(edge);});$('#screen').appendChild(scene);
+ $('#screen').appendChild(scene);
 }
 function mountMatch(){
   mountMatchReferenceBackground();
@@ -881,10 +921,11 @@ function mountMatch(){
   enableTvDrag($('#matchFixtures'));
   $('#matchFixtures').addEventListener('scroll',event=>{matchScroll[matchKey()]=event.currentTarget.scrollTop;},{passive:true});
   paintMatchFixtures();
-  $('#detailDesc').textContent='点击日期切换当天的比赛；赛事列表可独立上下滑动。联赛筛选、比赛详情与提醒也可操作。';
-  $('#stateNote').textContent='赛程和比分为演示数据，用于体验日期切换及列表交互。';
+  $('#detailDesc').textContent='比赛卡片与详情均显示播放频道，支持多个频道。点击日期更新赛程，列表可独立上下滑动，联赛筛选与提醒保留。';
+  $('#stateNote').textContent='赛程、比分与播放频道对应关系均为演示数据，不代表真实转播安排。';
 }
 
+const PROFILE_REFERENCE_ACCOUNT={email:'inco0574@gmail.com',id:'3010002025',expiry:'Nov / 23 / 2026'};
 const EXTRA_PROFILE_PAGES=['historyVod','historyLive','favoriteEmpty','renew','share','settings','language'];
 const PROFILE_LANGUAGE_OPTIONS=['Follow the system','English','Português'];
 function profileFavoritePage(){return tvState().favorites.length&&!demo.cleared.favoriteLive?'favoriteLive':'favoriteEmpty';}
@@ -899,7 +940,7 @@ function shareDemo(platform){
 }
 function mountRecharge(){
   const form=document.createElement('form');form.className='recharge-form';
-  form.innerHTML='<input class="recharge-input" id="rechargeCode" aria-label="输入充值码" autocomplete="off" spellcheck="false" maxlength="64"><button class="recharge-confirm" id="confirmRecharge" type="submit" disabled>Confirm</button>';
+  form.innerHTML='<input class="recharge-input" id="rechargeCode" aria-label="输入充值码" autocomplete="off" spellcheck="false" maxlength="64" aria-describedby="rechargeCodeHint"><p id="rechargeCodeHint" class="recharge-code-hint">Your code is a 16-digit number.</p><button class="recharge-confirm" id="confirmRecharge" type="submit" disabled>Confirm</button>';
   $('#screen').appendChild(form);
   $('#rechargeCode').oninput=()=>{$('#confirmRecharge').disabled=!$('#rechargeCode').value.trim();};
   form.onsubmit=event=>{
@@ -947,6 +988,43 @@ function mountExtraProfile(){
   if(current==='language'){
     const dismiss=document.createElement('button');dismiss.className='language-dismiss';dismiss.setAttribute('aria-label','关闭语言面板');dismiss.onclick=returnToSettings;$('#screen').appendChild(dismiss);mountLanguageSheet();
   }
+}
+
+// Local prototype PIN flow. No account credential or server-side access control is changed.
+function syncAdultContentToggle(){
+ const row=$('.app-menu-row[aria-label="成人内容开关"]');if(!row)return;
+ row.setAttribute('aria-pressed',!!demo.adult);row.querySelector('.app-toggle').dataset.enabled=!!demo.adult;
+}
+function requestAdultContentToggle(){
+ if(demo.adult){demo.adult=false;save();syncAdultContentToggle();return;}
+ openParentalLockDialog();
+}
+async function parentalPinDigest(pin,salt){
+ const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(salt+pin));
+ return Array.from(new Uint8Array(digest),byte=>byte.toString(16).padStart(2,'0')).join('');
+}
+function openParentalLockDialog(){
+ modal('Parental Lock',`<form class="parental-lock-form" id="parentalLockForm" novalidate><p id="parentalLockCopy">Enter the 4-digit password to unlock parental controls.</p><input id="parentalLockPin" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" autocomplete="off" aria-label="4-digit password" aria-describedby="parentalLockCopy parentalLockError"><p id="parentalLockError" class="parental-lock-error" role="alert" hidden></p><div class="parental-lock-actions"><button type="submit" id="parentalLockOk">OK</button><button type="button" id="parentalLockCancel">CANCEL</button></div></form>`,'parental');
+ const form=$('#parentalLockForm'),pin=$('#parentalLockPin'),error=$('#parentalLockError'),ok=$('#parentalLockOk');
+ const showError=text=>{error.textContent=text;error.hidden=false;pin.setAttribute('aria-invalid','true');pin.focus();};
+ pin.oninput=()=>{pin.value=pin.value.replace(/\D/g,'').slice(0,4);error.hidden=true;pin.removeAttribute('aria-invalid');};
+ $('#parentalLockCancel').onclick=()=>{pin.value='';closeModal();};
+ form.onsubmit=async event=>{
+  event.preventDefault();if(ok.disabled)return;
+  if(!/^\d{4}$/.test(pin.value)){showError('Enter a 4-digit password.');return;}
+  const lock=demo.parentalLock,salt=lock?.salt||Array.from(crypto.getRandomValues(new Uint8Array(16)),byte=>byte.toString(16).padStart(2,'0')).join('');
+  ok.disabled=true;
+  try{
+   const hash=await parentalPinDigest(pin.value,salt);
+   if(!form.isConnected||!$('#veil').classList.contains('open')||$('#veil').dataset.presentation!=='parental')return;
+   if(lock?.hash&&hash!==lock.hash){showError('Incorrect password. Please try again.');return;}
+   if(!lock?.hash)demo.parentalLock={salt,hash};
+   demo.adult=true;pin.value='';save();syncAdultContentToggle();closeModal();
+  }catch(error){showError('Unable to save password. Please try again.');}
+  finally{ok.disabled=false;}
+ };
+ pin.focus();
+ $('#stateNote').textContent=demo.parentalLock?.hash?'本地原型：输入已设置的 4 位数字密码后开启 Adult Content。':'本地原型：首次确认设置 4 位数字密码后开启 Adult Content；取消则保持关闭。';
 }
 
 // Existing screenshot artwork plus original vector covers for the sample catalogue.
@@ -1040,12 +1118,11 @@ function enableVodGestures(pane){
 }
 function openVodDetail(item){openWatchPage(item);}
 function mountVod(){
-  if(current==='kids'){mountReferenceKids();return;}
   const page=current,kind=page==='series'?'series':page==='kids'?'kids':page==='featured'?'featured':'movie';
   const shelves=vodShelves(kind),position=vodPositions[page]||(vodPositions[page]={top:0,rows:{},hero:page==='movieAlt'?1:0});
   const heroes=(kind==='kids'?['spacepals','cloudcastle','oceanfriends']:kind==='series'?['hawk','friends','north']:['hail','neon','ride']).map(id=>VOD_BY_ID[id]);
   const pane=document.createElement('section');pane.className='vod-pane';pane.id='vodPane';pane.tabIndex=0;pane.setAttribute('aria-label',`${kind.toUpperCase()} 点播内容`);
-  pane.innerHTML=`<section class="vod-hero" aria-label="推荐影片轮播"><div class="vod-hero-strip" id="vodHeroStrip" data-vod-horizontal tabindex="0">${heroes.map(item=>`<button class="vod-hero-slide" data-vod-item="${item.id}" aria-label="查看推荐 ${escapeHtml(item.title)}">${vodBrowseHero(item)}<span class="vod-hero-shade"></span><span class="vod-hero-title">${escapeHtml(item.title)}</span></button>`).join('')}</div><div class="vod-hero-dots">${heroes.map((item,index)=>`<button class="vod-hero-dot" data-vod-slide="${index}" aria-label="推荐第 ${index+1} 张" aria-pressed="${index===position.hero}"></button>`).join('')}</div></section>${shelves.map((shelf,index)=>`<section class="vod-shelf"><header class="vod-shelf-heading"><h2>${shelf.title}</h2>${kind==='movie'?'':`<div class="vod-shelf-tools"><button class="vod-see-all" data-vod-collection="${shelf.key}" aria-label="查看全部 ${shelf.title}">See all <span>${shelf.items.length}</span></button><div class="vod-row-controls"><button data-vod-scroll="${index}" data-direction="-1" aria-label="${shelf.title} 向左滑动">‹</button><button data-vod-scroll="${index}" data-direction="1" aria-label="${shelf.title} 向右滑动">›</button></div></div>`}</header><div class="vod-row" id="vodRow${index}" data-vod-horizontal data-vod-row="${index}" tabindex="0" role="region" aria-label="${shelf.title} 海报列表">${(kind==='movie'?shelf.items:shelf.items.slice(0,8)).map(vodBrowseCard).join('')}</div></section>`).join('')}<p class="vod-footer-note">${kind==='kids'?'Little stories. Big adventures.':'More stories to discover.'}</p>`;
+  pane.innerHTML=`<section class="vod-hero" aria-label="推荐影片轮播"><div class="vod-hero-strip" id="vodHeroStrip" data-vod-horizontal tabindex="0">${heroes.map(item=>`<button class="vod-hero-slide" data-vod-item="${item.id}" aria-label="查看推荐 ${escapeHtml(item.title)}">${vodBrowseHero(item)}<span class="vod-hero-shade"></span><span class="vod-hero-title">${escapeHtml(item.title)}</span></button>`).join('')}</div><div class="vod-hero-dots">${heroes.map((item,index)=>`<button class="vod-hero-dot" data-vod-slide="${index}" aria-label="推荐第 ${index+1} 张" aria-pressed="${index===position.hero}"></button>`).join('')}</div></section>${shelves.map((shelf,index)=>`<section class="vod-shelf"><header class="vod-shelf-heading"><h2>${shelf.title}</h2></header><div class="vod-row" id="vodRow${index}" data-vod-horizontal data-vod-row="${index}" tabindex="0" role="region" aria-label="${shelf.title} 海报列表">${shelf.items.map(vodBrowseCard).join('')}</div></section>`).join('')}<p class="vod-footer-note">${kind==='kids'?'Little stories. Big adventures.':'More stories to discover.'}</p>`;
   $('#screen').appendChild(pane);
   pane.scrollTop=position.top;
   pane.addEventListener('scroll',()=>{position.top=pane.scrollTop;},{passive:true});
@@ -1053,8 +1130,7 @@ function mountVod(){
   hero.addEventListener('scroll',()=>{position.hero=Math.round(hero.scrollLeft/hero.clientWidth);pane.querySelectorAll('[data-vod-slide]').forEach(button=>button.setAttribute('aria-pressed',Number(button.dataset.vodSlide)===position.hero));},{passive:true});
   pane.querySelectorAll('[data-vod-row]').forEach(row=>{
     const index=row.dataset.vodRow;row.scrollLeft=position.rows[index]||0;
-    const arrows=[...pane.querySelectorAll(`[data-vod-scroll="${index}"]`)];
-    const update=()=>{position.rows[index]=row.scrollLeft;if(arrows.length){arrows[0].disabled=row.scrollLeft<=1;arrows[1].disabled=row.scrollLeft>=row.scrollWidth-row.clientWidth-1;}};
+    const update=()=>{position.rows[index]=row.scrollLeft;};
     row.addEventListener('scroll',update,{passive:true});update();
   });
   pane.addEventListener('keydown',event=>{
@@ -1062,24 +1138,15 @@ function mountVod(){
     if(row&&['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();event.stopPropagation();row.scrollBy({left:(event.key==='ArrowRight'?1:-1)*row.clientWidth*.7,behavior:'smooth'});}
   });
   pane.addEventListener('click',event=>{
-    const collection=event.target.closest('[data-vod-collection]');if(collection){openVodCollection(kind,collection.dataset.vodCollection);return;}
-    const arrow=event.target.closest('[data-vod-scroll]');if(arrow){const row=$(`#vodRow${arrow.dataset.vodScroll}`);row.scrollBy({left:Number(arrow.dataset.direction)*row.clientWidth*.85,behavior:'smooth'});return;}
     const dot=event.target.closest('[data-vod-slide]');if(dot){hero.scrollTo({left:Number(dot.dataset.vodSlide)*hero.clientWidth,behavior:'smooth'});return;}
     const item=event.target.closest('[data-vod-item]');if(item)openVodDetail(item.dataset.vodItem);
   });
   enableVodGestures(pane);
-  $('#detailDesc').textContent=kind==='movie'?'海报列表仅保留左右滑动，不显示 See all、数量或左右箭头；内容区域可上下滑动，点击海报播放。':'海报行可左右滑动，内容区域可上下滑动；支持触摸、触控板、鼠标拖动及行标题旁的方向按钮。点击海报查看内容。';
+  $('#detailDesc').textContent='海报列表仅保留左右滑动，不显示 See all、数量或左右箭头；内容区域可上下滑动，点击海报播放。';
   $('#stateNote').textContent=`${VOD_ITEMS.filter(item=>kind==='featured'||item.kind===kind).length} 个示例标题；栏目按热度、演示上架时间或题材区分。年份、地区、分级和热度为本地演示字段。`;
   $('#caption').textContent='上下浏览内容 · 左右滑动海报 · 点击查看影片';
 }
 
-function mountReferenceKids(){
- const pane=document.createElement('section');pane.className='vod-pane kids-reference-pane';pane.id='vodPane';pane.setAttribute('aria-label','KIDS 原截图内容');
- pane.innerHTML=`<button class="kids-reference-banner" aria-label="播放 Ride or Die"><img src="${pageById.kids.src}" alt="Ride or Die，原截图推荐横幅" draggable="false"></button>`;
- $('#screen').appendChild(pane);pane.querySelector('button').onclick=()=>openVodDetail(VOD_BY_ID.ride);
- $('#detailDesc').textContent='保持 81 号原截图设计：彩色 KIDS 字标、Ride or Die 横幅与下方留白，不添加动画海报或额外栏目。';
- $('#stateNote').textContent='横幅沿用原截图素材；点击进入 Ride or Die 同页播放。';$('#caption').textContent='Kids 原截图设计 · 点击横幅播放';
-}
 
 // Local demo attributes support real filtering and distinct catalogue shelves.
 // These are prototype metadata, not verified release/certification information.
@@ -1130,7 +1197,7 @@ function vodBrowseArt(item){
  const [page,x,y,width]=item.crop,source=pageById[page],cleanWidth=page==='historyVod'?width:width*.88,cleanX=x+(width-cleanWidth)/2,cleanY=y;
  return `<span class="vod-art"><img class="vod-sprite" src="${source.src}" alt="" draggable="false" style="--sprite-width:${source.width/cleanWidth*100}%;--sprite-x:${-cleanX/source.width*100}%;--sprite-y:${-cleanY/source.height*100}%">${item.artTitle?`<span class="vod-art-title">${escapeHtml(item.title)}</span>`:''}</span>`;
 }
-function vodBrowseCard(item){return `<button class="vod-card vod-browse-card" data-vod-item="${item.id}" aria-label="播放 ${escapeHtml(item.title)}" title="${escapeHtml(item.title)}"><span class="vod-browse-poster">${vodBrowseArt(item)}<span class="vod-browse-score"><b aria-hidden="true">★</b> ${item.rating}</span></span><span class="vod-card-title">${escapeHtml(item.title)}</span><span class="vod-browse-meta">${VOD_KIND_LABELS[item.kind]} · ${item.year}</span></button>`;}
+function vodBrowseCard(item){return `<button class="vod-card vod-browse-card" data-vod-item="${item.id}" aria-label="播放 ${escapeHtml(item.title)}" title="${escapeHtml(item.title)}"><span class="vod-browse-poster">${vodBrowseArt(item)}<span class="vod-browse-score"><b aria-hidden="true">★</b> ${item.rating}</span></span><span class="vod-card-title">${escapeHtml(item.title)}</span></button>`;}
 function vodBrowseHero(item){
  if(item.hero)return vodHero(item);
  return `<span class="vod-browse-hero-art">${vodBrowseArt(item)}</span>`;
@@ -1250,7 +1317,7 @@ function mountWatchPage(item){
  const expanded=movieWatchExpanded[item.id]||(movieWatchExpanded[item.id]={story:false,cast:false}),recommendations=movieRecommendations(item),duration=series?2700:item.id==='mandalorian'?7920:7200;
  const pane=document.createElement('section');pane.id=series?'seriesWatchPane':'movieWatchPane';pane.className='movie-watch-pane'+(series?' series-watch-pane':'');pane.tabIndex=0;pane.setAttribute('aria-label',`${item.title} ${series?'剧集':'电影'}播放页`);
  const groups=[recommendations.slice(0,4),recommendations.slice(4)].filter(group=>group.length);
- pane.innerHTML=`<section class="movie-player-viewport" id="moviePlayback" aria-label="${series?'剧集':'电影'}页内播放器" data-playing="${state.playing}"><div class="movie-film-still">${movieFrameArtwork(item)}</div><span class="movie-video-shade"></span><div class="movie-player-top" data-no-drag><button class="movie-back" id="movieBack" aria-label="返回内容来源">‹</button><span class="movie-player-badge" id="watchMode"></span></div><button class="movie-play-center" id="movieCenterPlay"></button><div class="movie-controls" data-no-drag><input class="movie-seek" id="movieSeek" aria-label="播放进度" type="range" min="0" max="${duration}" value="${state.seconds}"><div class="movie-control-row"><button id="movieTogglePlay"></button><span class="movie-time" id="movieTime"></span><button id="movieMute" aria-label="切换静音" aria-pressed="${state.muted}">♪</button><button id="movieFullscreen" aria-label="切换沉浸播放">⛶</button></div></div></section><div class="movie-watch-info"><div class="movie-title-row"><h1>${escapeHtml(item.title)}</h1><span class="movie-detail-rating">${item.rating}</span></div><p class="movie-meta">${escapeHtml(info.meta)}</p><p class="movie-genres">${escapeHtml(info.genres)}</p><div class="watch-actions"><button id="watchFavorite" class="watch-favorite" aria-pressed="${vodFavoriteIds().includes(item.id)}"></button><span id="watchEpisodeLabel" class="watch-episode-label" role="status">${series?'Season '+state.season+' · Episode '+state.episode:'Now playing'}</span></div>${series?`<section class="series-episodes" aria-label="选季与选集"><div class="series-season-row"><button id="seriesSeason" class="series-season" aria-label="切换季">Season 1 ${uiIcon('chevron')}</button><span>8 Episodes</span></div><div id="seriesEpisodeRow" class="series-episode-row" data-vod-horizontal tabindex="0" aria-label="剧集列表，可左右滑动">${Array.from({length:8},(_,i)=>`<button data-series-episode="${i+1}" aria-label="播放第 ${i+1} 集" aria-pressed="${state.episode===i+1}">${i+1}</button>`).join('')}</div></section>`:''}<p class="movie-description ${expanded.story?'is-expanded':''}" id="movieSynopsis">${escapeHtml(info.description)}</p><button class="movie-more" id="movieSynopsisMore" aria-expanded="${expanded.story}">${expanded.story?'Less':'More'}</button>${info.cast?`<div class="movie-credits">${info.director?`<p>Director: ${escapeHtml(info.director)}</p>`:''}<p class="movie-cast ${expanded.cast?'is-expanded':''}" id="movieCast">Cast: ${escapeHtml(info.cast)}</p></div><button class="movie-more" id="movieCastMore" aria-expanded="${expanded.cast}">${expanded.cast?'Less':'More'}</button>`:''}</div><section class="movie-recommendations" aria-label="More Like This 推荐"><header class="movie-reco-heading"><h2>More Like This</h2><small>${recommendations.length} ${series?'series':'movies'}</small></header>${groups.map((group,index)=>`<section class="movie-reco-shelf"><header class="vod-shelf-heading"><h3>${index===0?'You may also like':'More to explore'}</h3><div class="vod-row-controls"><button data-movie-scroll="${index}" data-direction="-1" aria-label="推荐第 ${index+1} 行向左滑动">‹</button><button data-movie-scroll="${index}" data-direction="1" aria-label="推荐第 ${index+1} 行向右滑动">›</button></div></header><div class="vod-row" id="movieReco${index}" role="region" aria-label="推荐第 ${index+1} 行" data-vod-horizontal tabindex="0">${group.map(candidate=>`<button class="vod-card" data-movie-recommend="${candidate.id}" aria-label="播放推荐 ${escapeHtml(candidate.title)}">${vodArt(candidate,true)}<span class="vod-card-title">${escapeHtml(candidate.title)}</span></button>`).join('')}</div></section>`).join('')}</section>`;
+ pane.innerHTML=`<section class="movie-player-viewport" id="moviePlayback" aria-label="${series?'剧集':'电影'}页内播放器" data-playing="${state.playing}"><div class="movie-film-still">${movieFrameArtwork(item)}</div><span class="movie-video-shade"></span><div class="movie-player-top" data-no-drag><button class="movie-back" id="movieBack" aria-label="返回内容来源">‹</button><span class="movie-player-badge" id="watchMode"></span></div><button class="movie-play-center" id="movieCenterPlay"></button><div class="movie-controls" data-no-drag><input class="movie-seek" id="movieSeek" aria-label="播放进度" type="range" min="0" max="${duration}" value="${state.seconds}"><div class="movie-control-row"><button id="movieTogglePlay"></button><span class="movie-time" id="movieTime"></span><button id="movieMute" aria-label="切换静音" aria-pressed="${state.muted}">♪</button><button id="movieFullscreen" aria-label="切换沉浸播放">⛶</button></div></div></section><div class="movie-watch-info"><div class="movie-title-row"><h1>${escapeHtml(item.title)}</h1><span class="movie-detail-rating">${item.rating}</span></div><p class="movie-meta">${escapeHtml(info.meta)}</p><p class="movie-genres">${escapeHtml(info.genres)}</p><div class="watch-actions"><button id="watchFavorite" class="watch-favorite" aria-pressed="${vodFavoriteIds().includes(item.id)}"></button><span id="watchEpisodeLabel" class="watch-episode-label" role="status">${series?'Season '+state.season+' · Episode '+state.episode:'Now playing'}</span></div>${series?`<section class="series-episodes" aria-label="选季与选集"><div class="series-season-row"><button id="seriesSeason" class="series-season" aria-label="切换季">Season 1 ${uiIcon('chevron')}</button><span>8 Episodes</span></div><div id="seriesEpisodeRow" class="series-episode-row" data-vod-horizontal tabindex="0" aria-label="剧集列表，可左右滑动">${Array.from({length:8},(_,i)=>`<button data-series-episode="${i+1}" aria-label="播放第 ${i+1} 集" aria-pressed="${state.episode===i+1}">${i+1}</button>`).join('')}</div></section>`:''}<p class="movie-description ${expanded.story?'is-expanded':''}" id="movieSynopsis">${escapeHtml(info.description)}</p><button class="movie-more" id="movieSynopsisMore" aria-expanded="${expanded.story}">${expanded.story?'Less':'More'}</button>${info.cast?`<div class="movie-credits">${info.director?`<p>Director: ${escapeHtml(info.director)}</p>`:''}<p class="movie-cast ${expanded.cast?'is-expanded':''}" id="movieCast">Cast: ${escapeHtml(info.cast)}</p></div><button class="movie-more" id="movieCastMore" aria-expanded="${expanded.cast}">${expanded.cast?'Less':'More'}</button>`:''}</div><section class="movie-recommendations" aria-label="More Like This 推荐">${groups.map((group,index)=>`<section class="movie-reco-shelf"><header class="vod-shelf-heading"><h3>${index===0?'You may also like':'More to explore'}</h3></header><div class="vod-row" id="movieReco${index}" role="region" aria-label="推荐第 ${index+1} 行" data-vod-horizontal tabindex="0">${group.map(candidate=>`<button class="vod-card" data-movie-recommend="${candidate.id}" aria-label="播放推荐 ${escapeHtml(candidate.title)}">${vodArt(candidate,true)}<span class="vod-card-title">${escapeHtml(candidate.title)}</span></button>`).join('')}</div></section>`).join('')}</section>`;
  $('#screen').appendChild(pane);enableVodGestures(pane);
  function paintPlayback(){
   $('#moviePlayback').dataset.playing=state.playing;$('#watchMode').textContent=(state.playing?'PLAYING':'PAUSED')+' · PREVIEW';
@@ -1268,8 +1335,6 @@ function mountWatchPage(item){
  if($('#movieCastMore'))$('#movieCastMore').onclick=()=>{expanded.cast=!expanded.cast;$('#movieCast').classList.toggle('is-expanded',expanded.cast);$('#movieCastMore').textContent=expanded.cast?'Less':'More';$('#movieCastMore').setAttribute('aria-expanded',expanded.cast);};
  if(series){$('#seriesSeason').onclick=()=>options('Season',['Season 1'],()=>{} ,'Season 1');pane.querySelectorAll('[data-series-episode]').forEach(button=>button.onclick=()=>{state.episode=Number(button.dataset.seriesEpisode);state.seconds=0;state.playing=true;demo.episode=state.episode;demo.season=1;save();pane.querySelectorAll('[data-series-episode]').forEach(b=>b.setAttribute('aria-pressed',b===button));$('#watchEpisodeLabel').textContent='Season 1 · Episode '+state.episode;paintPlayback();});}
  pane.querySelectorAll('[data-movie-recommend]').forEach(button=>button.onclick=()=>openWatchPage(button.dataset.movieRecommend));
- pane.querySelectorAll('[data-movie-scroll]').forEach(button=>button.onclick=()=>$('#movieReco'+button.dataset.movieScroll).scrollBy({left:Number(button.dataset.direction)*pane.clientWidth*.8,behavior:'smooth'}));
- pane.querySelectorAll('.vod-row').forEach((row,index)=>{const buttons=[...pane.querySelectorAll(`[data-movie-scroll="${index}"]`)];const update=()=>{buttons[0].disabled=row.scrollLeft<=1;buttons[1].disabled=row.scrollLeft>=row.scrollWidth-row.clientWidth-1;};row.addEventListener('scroll',update,{passive:true});update();});
  pane.addEventListener('keydown',event=>{if(event.target===pane&&['PageDown','PageUp','Home','End'].includes(event.key)){event.preventDefault();if(event.key==='Home'||event.key==='End')pane.scrollTo({top:event.key==='Home'?0:pane.scrollHeight,behavior:'smooth'});else pane.scrollBy({top:(event.key==='PageDown'?1:-1)*pane.clientHeight*.65,behavior:'smooth'});return;}const row=event.target.closest('[data-vod-horizontal]');if(row&&['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();event.stopPropagation();row.scrollBy({left:(event.key==='ArrowRight'?1:-1)*row.clientWidth*.75,behavior:'smooth'});}});
  paintPlayback();watchTimer=setInterval(()=>{if(!pane.isConnected){stopWatchTimer();return;}if(state.playing){state.seconds=Math.min(duration,state.seconds+1);if(state.seconds===duration)state.playing=false;paintPlayback();}},1000);
  $('#detailDesc').textContent=series?'沿用 85 参考图的播放器、标题、季和集结构。进入即页内模拟播放，支持选集、收藏和 More Like This。':'沿用 127 参考图的电影播放器、影片信息及演职员结构。进入即页内模拟播放，支持收藏和 More Like This。';
@@ -1388,7 +1453,7 @@ function paintEpgPrograms(initial=false){
   list.innerHTML=programs.map(program=>{
     const status=epgProgramState(program),reserved=!!state.reservations[program.id],selected=state.playing?.id===program.id;
     const unavailable=status==='past'&&plain,action=status==='past'?(plain?'已结束':'回放'):status==='live'?'观看直播':reserved?'取消预约':'预约';
-    return `<article class="epg-program-row ${selected?'is-selected':''}" data-state="${status}"><button class="epg-program-main" data-epg-program="${program.id}" ${unavailable?'disabled':''} aria-label="${action} ${program.from} ${escapeHtml(program.title)}"><span class="epg-program-copy"><strong>${program.from}–${program.to}<em>${status==='past'?(plain?'Ended':'Replay'):status==='live'?'ON NOW':reserved?'Subscribed':'Upcoming'}</em></strong><small>${escapeHtml(program.title)}</small></span>${status==='future'||unavailable?'':`<span class="epg-program-icon">${EPG_ICONS[status==='past'?'play':'live']}</span>`}</button>${epgCanSubscribe(program)?`<button class="epg-reserve ${plain?'epg-subscribe':''}" data-epg-reserve="${program.id}" aria-label="${reserved?'取消预约':'预约'} ${program.from} ${escapeHtml(program.title)}" aria-pressed="${reserved}">${EPG_ICONS.alarm}${plain?`<span>${reserved?'Subscribed':'Subscribe'}</span>`:''}</button>`:''}</article>`;
+    return `<article class="epg-program-row ${selected?'is-selected':''}" data-state="${status}"><button class="epg-program-main" data-epg-program="${program.id}" ${unavailable?'disabled':''} aria-label="${action} ${program.from} ${escapeHtml(program.title)}"><span class="epg-program-copy"><strong>${program.from}–${program.to}<em>${status==='past'?(plain?'Ended':'Playback'):status==='live'?'ON NOW':reserved?'Subscribed':'Upcoming'}</em></strong><small>${escapeHtml(program.title)}</small></span>${status==='future'||unavailable?'':`<span class="epg-program-icon">${EPG_ICONS[status==='past'?'play':'live']}</span>`}</button>${epgCanSubscribe(program)?`<button class="epg-reserve ${plain?'epg-subscribe':''}" data-epg-reserve="${program.id}" aria-label="${reserved?'取消预约':'预约'} ${program.from} ${escapeHtml(program.title)}" aria-pressed="${reserved}">${EPG_ICONS.alarm}${plain?`<span>${reserved?'Subscribed':'Subscribe'}</span>`:''}</button>`:''}</article>`;
   }).join('');
   if(initial){const cached=epgScroll.programs[key],liveIndex=programs.findIndex(program=>epgProgramState(program)==='live'),index=state.date===EPG_TODAY?Math.max(0,liveIndex-1):0;requestAnimationFrame(()=>{if(list.isConnected&&state.channel+'|'+state.date===key)list.scrollTop=cached??((list.children[index]?.offsetTop||0)-(list.firstElementChild?.offsetTop||0));});}else list.scrollTop=previous;
   document.querySelectorAll('[data-epg-date]').forEach(button=>button.setAttribute('aria-pressed',button.dataset.epgDate===state.date));
@@ -1589,11 +1654,11 @@ function mountAppHeader(){
  $('#screen').appendChild(header);
 }
 function mountCommonProfile(){
- if(current!=='profile')return;$('#screen').querySelectorAll('.hit').forEach(b=>b.remove());
- const panel=uiElement(`<section class="app-profile"><button class="app-profile-account" aria-label="查看账户信息"><span class="app-avatar">${uiIcon('profile')}</span><div><h1>My Account</h1><p>TVCinema Member</p><small class="app-account-expiry">Valid until 24 Nov 2026</small></div></button><button class="app-renew" id="uiRenew"><span>Renew membership<small>Manage your access</small></span>${uiIcon('chevron')}</button><div class="app-profile-shortcuts"><button id="uiFavorites">${uiIcon('heart')}<span>Favorites</span></button><button id="uiHistory">${uiIcon('history')}<span>History</span></button></div><div class="app-profile-menu"></div></section>`);
+ if(current!=='profile')return;if(demo.adult&&!demo.parentalLock?.hash){demo.adult=false;save();}$('#screen').querySelectorAll('.hit').forEach(b=>b.remove());
+ const panel=uiElement(`<section class="app-profile"><button class="app-profile-account" aria-label="查看账户信息"><span class="app-avatar">${uiIcon('profile')}</span><div><h1>${escapeHtml(PROFILE_REFERENCE_ACCOUNT.email)}</h1><p>ID: ${escapeHtml(PROFILE_REFERENCE_ACCOUNT.id)}</p><small class="app-account-expiry">Expired Date: ${escapeHtml(PROFILE_REFERENCE_ACCOUNT.expiry)}</small></div></button><button class="app-renew" id="uiRenew"><span>Renew membership<small>Manage your access</small></span>${uiIcon('chevron')}</button><div class="app-profile-shortcuts"><button id="uiFavorites">${uiIcon('heart')}<span>Favorites</span></button><button id="uiHistory">${uiIcon('history')}<span>History</span></button></div><div class="app-profile-menu"></div></section>`);
  $('#screen').appendChild(panel);panel.querySelector('.app-profile-account').onclick=()=>info('账户信息','此原型沿用示例账户，不连接真实账户。');panel.querySelector('#uiRenew').onclick=()=>go('renew');panel.querySelector('#uiFavorites').onclick=()=>go(profileFavoritePage());panel.querySelector('#uiHistory').onclick=()=>go('historyLive');
  const menu=panel.querySelector('.app-profile-menu');
- [['Share App','share',()=>go('share')],['Adult Content','info',()=>{demo.adult=!demo.adult;save();toast(`成人内容：${demo.adult?'已开启':'已关闭'}（模拟）`);}],['Settings','settings',()=>go('settings')],['Contact us','info',()=>info('联系我们','这是联系入口的交互演示。')]].forEach(([label,icon,action])=>{const row=uiElement(`<button class="app-menu-row">${uiIcon(icon)}<span>${label}</span>${label==='Adult Content'?`<span class="app-toggle" aria-hidden="true" data-enabled="${demo.adult}"></span>`:uiIcon('chevron')}</button>`);if(label==='Adult Content'){row.setAttribute('aria-label','成人内容开关');row.setAttribute('aria-pressed',demo.adult);}row.onclick=()=>{action();if(label==='Adult Content'){row.setAttribute('aria-pressed',demo.adult);row.querySelector('.app-toggle').dataset.enabled=demo.adult;}};menu.appendChild(row);});
+ [['Share App','share',()=>go('share')],['Adult Content','info',requestAdultContentToggle],['Settings','settings',()=>go('settings')],['Contact us','info',()=>info('联系我们','这是联系入口的交互演示。')]].forEach(([label,icon,action])=>{const row=uiElement(`<button class="app-menu-row">${uiIcon(icon)}<span>${label}</span>${label==='Adult Content'?`<span class="app-toggle" aria-hidden="true" data-enabled="${demo.adult}"></span>`:uiIcon('chevron')}</button>`);if(label==='Adult Content'){row.setAttribute('aria-label','成人内容开关');row.setAttribute('aria-pressed',demo.adult);}row.onclick=()=>{action();if(label==='Adult Content'){row.setAttribute('aria-pressed',demo.adult);row.querySelector('.app-toggle').dataset.enabled=demo.adult;}};menu.appendChild(row);});
 }
 function mountReferenceTabs(){
  const pages=['favoriteLive','favoriteVod','favoriteEmpty','history','historyLive','historyVod'];if(!pages.includes(current))return;
